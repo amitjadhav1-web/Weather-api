@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Now — Simple Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" id="app">
+    <header class="header">
+      <h1>Weather Now</h1>
+      <div class="controls">
+        <input id="searchInput" type="search" placeholder="Search city, e.g. Pune" aria-label="Search city" />
+        <button id="searchBtn" aria-label="Search">Search</button>
+        <button id="geoBtn" aria-label="Use my location">Use my location</button>
+      </div>
+    </header>
+
+    <section id="card" class="card hidden" aria-live="polite">
+      <div class="top">
+        <div class="city">
+          <h2 id="cityName">—</h2>
+          <p id="desc">—</p>
+        </div>
+        <div class="temp" id="tempBlock">
+          <img id="icon" alt="" />
+          <div>
+            <div class="value" id="temp">--°</div>
+            <div class="feels" id="feels">Feels like --°</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="row"><strong>Humidity:</strong> <span id="humidity">--%</span></div>
+        <div class="row"><strong>Wind:</strong> <span id="wind">-- m/s</span></div>
+        <div class="row"><strong>Clouds:</strong> <span id="clouds">--%</span></div>
+        <div class="row"><strong>Pressure:</strong> <span id="pressure">-- hPa</span></div>
+      </div>
+
+      <div class="actions">
+        <div class="unit-toggle">
+          <label>
+            <input type="radio" name="unit" value="metric" checked /> Celsius
+          </label>
+          <label>
+            <input type="radio" name="unit" value="imperial" /> Fahrenheit
+          </label>
+        </div>
+        <div class="favorites">
+          <input id="favInput" placeholder="Add favorite city" />
+          <button id="addFavBtn">Add</button>
+        </div>
+      </div>
+
+      <div id="favList" class="fav-list"></div>
+
+      <div id="error" class="error" role="alert" hidden></div>
+      <div id="loading" class="loading" hidden>Loading…</div>
+    </section>
+
+    <footer class="footer">
+      <small>Built with OpenWeatherMap API • Replace <code>YOUR_API_KEY</code> in <code>script.js</code></small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
